@@ -16,7 +16,10 @@ using UnityEngine.UI;
 
 public class FirstPersonController : MonoBehaviour
 {
+
     private Rigidbody rb;
+    [HideInInspector]
+    public bool isInvisible = false;
 
     #region Camera Movement Variables
 
@@ -530,9 +533,11 @@ public class FirstPersonController : MonoBehaviour
 
 
 
+
+
 // Custom Editor
 #if UNITY_EDITOR
-    [CustomEditor(typeof(FirstPersonController)), InitializeOnLoadAttribute]
+[CustomEditor(typeof(FirstPersonController)), InitializeOnLoadAttribute]
     public class FirstPersonControllerEditor : Editor
     {
     FirstPersonController fpc;

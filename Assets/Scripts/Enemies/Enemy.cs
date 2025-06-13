@@ -29,6 +29,7 @@ public abstract class Enemy : MonoBehaviour
     protected LifeSystem lifeSystem;
 
     [SerializeField] private UIenemyHealth healthUI;
+
     protected virtual void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -45,6 +46,14 @@ public abstract class Enemy : MonoBehaviour
     protected virtual void Update()
     {
         if (player == null) return;
+
+        // 👇 Verificar invisibilidad del jugador
+        FirstPersonController controller = player.GetComponent<FirstPersonController>();
+        if (controller != null && controller.isInvisible)
+        {
+            agent.ResetPath(); // opcional: detener movimiento
+            return;
+        }
 
         float dist = Vector3.Distance(transform.position, player.position);
         switch (currentState)
@@ -73,13 +82,14 @@ public abstract class Enemy : MonoBehaviour
                     TransitionTo(State.Patrol);
                 break;
         }
+
         healthUI.UpdateHealth(lifeSystem.Current, lifeSystem.Max);
     }
 
     protected void TransitionTo(State newState)
     {
         currentState = newState;
-        // you can add enter/exit logic here if needed
+        // Puedes agregar lógica extra al cambiar de estado si lo deseas
     }
 
     #region Behaviors
@@ -123,12 +133,13 @@ public abstract class Enemy : MonoBehaviour
     {
         float deathAnimLength = 1.5f; // Ajusta según la duración de la animación
         yield return new WaitForSeconds(deathAnimLength);
+
         ItemManager manager = FindFirstObjectByType<ItemManager>();
         if (manager != null)
         {
             manager.TrySpawnRandomItem(transform.position);
         }
+
         Destroy(gameObject);
     }
-
 }
