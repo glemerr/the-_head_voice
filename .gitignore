@@ -1,0 +1,42 @@
+# Unity
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+[Mm]emoryCaptures/
+
+# Archivos grandes excluidos
+*.psd
+*.psb
+*.tga
+*.exr
+*.hdr
+*.tiff
+*.fbx
+*.FBX
+*.wav
+*.aif
+*.aiff
+*.jpg
+*.jpeg
+*.png
+
+# Carpetas de terceros excluidas
+Assets/GabrielAguiarProductions/
+Assets/UnityTechnologies/
+Assets/Ultimate*/
+Assets/TextMesh*/Sprites/
+Assets/ModularFirstPersonController/DemoScene/
+
+# Visual Studio
+.vs/
+*.csproj
+*.sln
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj

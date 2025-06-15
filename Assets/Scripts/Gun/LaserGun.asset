@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ac208816d4f1d24b997c1dafb9d0559, type: 3}
+  m_Name: LaserGun
+  m_EditorClassIdentifier: 
+  weaponName: LaserGun
+  activationKey: 50
+  weaponIcon: {fileID: 21300000, guid: e28c41f7ca5838e4887a72cd0078bb37, type: 3}
+  baseDamage: 10
+  baseFireRate: 0.2
+  baseProjectileSpeed: 25
+  baseClipSize: 10
+  baseReloadTime: 2
+  damage: 10
+  fireRate: 0.2
+  projectileSpeed: 25
+  clipSize: 10
+  reloadTime: 2
+  gravity: 0
+  timeToLive: 10
+  trajectoryResolution: 10
+  projectilePrefab: {fileID: 7293012263426145516, guid: 5663f3fe9c88dec4096b9d1fc1267158, type: 3}
+  gunModelPrefab: {fileID: 8288977707117067636, guid: e0846afb66a84fa49bb4237aeeef9127, type: 3}
