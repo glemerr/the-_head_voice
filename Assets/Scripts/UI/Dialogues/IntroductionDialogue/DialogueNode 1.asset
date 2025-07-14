@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4025dce944a8fe4d960d3711323eb3c, type: 3}
+  m_Name: DialogueNode 1
+  m_EditorClassIdentifier: 
+  speakerName: La Abuela
+  dialogueText: "\u201CPara enfrentar tu miedo al abandono, debes adentrarte en el
+    Pantano del Abandono.\nAll\xED emerger\xE1n criaturas acu\xE1ticas que reflejan
+    tus memorias m\xE1s dolorosas.\u201D"
+  missionTitle: "Misi\xF3n: Explora el Pantano del Abandono"
+  missionDescription: "\u201CCamina hasta el centro del pantano y derrota a la Sombra
+    Materna.\nSolo as\xED romper\xE1s el eco de tu vac\xEDo interior"
+  voiceClip: {fileID: 0}

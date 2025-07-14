@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ac208816d4f1d24b997c1dafb9d0559, type: 3}
+  m_Name: PortalGun
+  m_EditorClassIdentifier: 
+  weaponName: Portal
+  activationKey: 51
+  weaponIcon: {fileID: 21300000, guid: 10647af0aa3363448925712debf673bc, type: 3}
+  baseDamage: 0
+  baseFireRate: 10
+  baseProjectileSpeed: 10
+  baseClipSize: 1
+  baseReloadTime: 0.1
+  damage: 0
+  fireRate: 10
+  projectileSpeed: 10
+  clipSize: 1
+  reloadTime: 0.1
+  gravity: -9.81
+  timeToLive: 15
+  trajectoryResolution: 10
+  projectilePrefab: {fileID: 181090945216349060, guid: 306b435b134bac74fb1907373a75cf37, type: 3}
+  gunModelPrefab: {fileID: 2838698711804575084, guid: 088e793db66745d47a63cf36851f149f, type: 3}

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4025dce944a8fe4d960d3711323eb3c, type: 3}
+  m_Name: DialogueNode 1
+  m_EditorClassIdentifier: 
+  speakerName: La Abuela
+  dialogueText: "Recuerdo cuando tem\xEDas la oscuridad bajo tu cama...  \r\nAhora
+    la oscuridad camina a tu lado, pero t\xFA eres m\xE1s fuerte.  \r\nBusca la l\xE1grima
+    cerca del \xE1rbol seco que toca el cielo: ah\xED, donde la luz a\xFAn insiste
+    en brillar."
+  missionTitle: "Misi\xF3n: Recupera la **L\xE1grima de Luz**"
+  missionDescription: "Debes recuperar la **L\xE1grima de Luz**, un fragmento olvidado
+    de tu infancia.  \r\nSolo esa l\xE1grima puede abrir el portal entre los mundos
+    desesperados.  \r\nSin ella, quedar\xE1s atrapada en el ciclo de tus miedos."
+  voiceClip: {fileID: 0}

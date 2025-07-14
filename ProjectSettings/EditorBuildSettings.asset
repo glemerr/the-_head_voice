@@ -6,8 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/MainMenu.unity
+    guid: 4368bfd23b493ae46ae63ec4f399e6c9
+  - enabled: 1
+    path: Assets/Scenes/Loading.unity
+    guid: 4f973a9113f20934a8082afa34f7237b
+  - enabled: 1
+    path: Assets/Scenes/PantanoLevel.unity
+    guid: bd5dd432e9d18e54c9d4063f49117322
   m_configObjects:
-    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 289c1b55c9541489481df5cc06664110, type: 3}
   m_UseUCBPForAssetBundles: 0
