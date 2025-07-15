@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
-
+using System.Collections;
 public class ZoneManager : MonoBehaviour
 {
     public static ZoneManager Instance;
@@ -11,7 +11,8 @@ public class ZoneManager : MonoBehaviour
     public EnemyManager enemyManager;
     public ZoneUIManager uiZoneManager;
 
-
+    public GameObject wallPrefab;
+    public float activationDelay = 3f;
     [Header("Zone State")]
     public int EnemiesRemaining { get; private set; }
 
@@ -30,6 +31,8 @@ public class ZoneManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+
+
     }
 
     void Start()
@@ -39,6 +42,10 @@ public class ZoneManager : MonoBehaviour
         foreach (ZoneTrigger zoneTrigger in zonesMap)
         {
             zoneTrigger.Initialize(this);
+            if (zoneTrigger.perimeterSpawner == null)
+            {
+                zoneTrigger.perimeterSpawner = zoneTrigger.gameObject.AddComponent<PerimeterSpawner>();
+            }
         }
     }
 
@@ -46,11 +53,17 @@ public class ZoneManager : MonoBehaviour
     {
         if (isZoneActive)
         {
+            CleanUpCurrentZone();
+        }
+        if (activeZone != null && activeZone.isActive)
+        {
+            Debug.LogWarning("A zone is already active. Deactivating it first.");
             DeactivateZone(activeZone);
         }
-
         activeZone = zone;
         isZoneActive = true;
+        StartCoroutine(delay(activationDelay, zone));
+
         Zone zoneConfig = activeZone.currentZone;
 
         // Initialize zone
@@ -64,17 +77,16 @@ public class ZoneManager : MonoBehaviour
         // Start UI sequence
         uiZoneManager.StartZoneSequence(zoneConfig);
         uiZoneManager.UpdateEnemyCount(zoneConfig.totalEnemies - EnemiesRemaining, zoneConfig.totalEnemies);
+
+
+        // // Spawn perimeter walls
+        // perimeterSpawner.SpawnFaces(zone, wallPrefab);
     }
 
     public void DeactivateZone(ZoneTrigger zone)
     {
         if (activeZone != zone || !isZoneActive) return;
-
-        enemyManager.StopSpawning();
-        enemyManager.ClearAllEnemies();
-        isZoneActive = false;
-
-        // End UI sequence with failure
+        CleanUpCurrentZone();
         uiZoneManager.EndZoneSequence(false, activeZone.currentZone);
     }
 
@@ -85,7 +97,7 @@ public class ZoneManager : MonoBehaviour
         // Update timer
         zoneTimer -= Time.deltaTime;
         uiZoneManager.UpdateTimer(zoneTimer);
-        //uiZoneManager.;
+
         // Check for failure
         if (zoneTimer <= 0)
         {
@@ -107,20 +119,71 @@ public class ZoneManager : MonoBehaviour
         EnemiesRemaining--;
 
         uiZoneManager.UpdateEnemyCount(
-        activeZone.currentZone.totalEnemies - EnemiesRemaining,
-        activeZone.currentZone.totalEnemies
+            activeZone.currentZone.totalEnemies - EnemiesRemaining,
+            activeZone.currentZone.totalEnemies
         );
     }
 
     private void EndZoneSuccessfully()
     {
-        isZoneActive = false;
-        enemyManager.StopSpawning();
-
-        // End UI sequence with success
+        CleanUpCurrentZone();
         uiZoneManager.EndZoneSequence(true, activeZone.currentZone);
     }
-    
 
+    private void CleanUpCurrentZone()
+    {
+        if (!isZoneActive) return;
+
+        enemyManager.StopSpawning();
+        enemyManager.ClearAllEnemies();
+        isZoneActive = false;
+
+        // Destroy perimeter walls
+        if (activeZone != null && activeZone.perimeterSpawner != null)
+        {
+            activeZone.perimeterSpawner.ClearFaces();
+        }
+    }
+
+    IEnumerator delay(float delay, ZoneTrigger zone)
+    {
+        yield return new WaitForSeconds(delay);
+
+
+        // Zone zoneConfig = activeZone.currentZone;
+
+        // // Initialize zone
+        // zoneTimer = zoneConfig.maxTime;
+        // EnemiesRemaining = zoneConfig.totalEnemies;
+
+        // // Configure enemies
+        // enemyManager.ConfigureForZone(zoneConfig);
+        // enemyManager.StartSpawning();
+
+        // // Start UI sequence
+        // uiZoneManager.StartZoneSequence(zoneConfig);
+        // uiZoneManager.UpdateEnemyCount(zoneConfig.totalEnemies - EnemiesRemaining, zoneConfig.totalEnemies);
+
+
+        // Spawn perimeter walls
+        zone.perimeterSpawner.SpawnFaces(zone, wallPrefab);
+    }
+    public void AddTime(float timeAmount)
+    {
+        Debug.Log($"Adding {timeAmount} seconds to zone timer in {activeZone?.currentZone?.zoneName ?? "unknown zone"}");
+        if (activeZone == null || !isZoneActive) return;
+
+        float time = timeAmount;
+        if (time <= 0) return;
+
+        // Clamp to max time
+        if (zoneTimer + time > activeZone.currentZone.maxTime)
+        {
+            time = activeZone.currentZone.maxTime - zoneTimer;
+        }
+
+        // Add to timer
+        zoneTimer += time;
+    }
 
 }

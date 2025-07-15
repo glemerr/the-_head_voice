@@ -10,12 +10,17 @@ public class RangedEnemy : Enemy
     protected override void DoAttack()
     {
         if (projectilePrefab == null || firePoint == null) return;
-
+            if (!DI_system.Instance.IsTargetVisible(transform))
+            {
+                DI_system.Instance.CreateIndicator(transform);
+            }
         // Instantiate and fire projectile toward player
         Vector3 dir = (player.position + Vector3.up  - firePoint.position).normalized;
         GameObject proj = Instantiate(projectilePrefab, firePoint.position, Quaternion.LookRotation(dir));
-        Bullet bullet = proj.GetComponent<Bullet>();
-        if (bullet != null) bullet.speed = projectileSpeed;
+        EnemyBombBullet bullet = proj.GetComponent<EnemyBombBullet>();
+        if (bullet == null) return;
+        bullet.owner = this.gameObject;
+        bullet.speed = projectileSpeed;
         bullet.damage = attackPower; // Set damage for the bullet logic
         bullet.direction = dir; // Store direction for bullet logic
         Rigidbody rb = proj.GetComponent<Rigidbody>();

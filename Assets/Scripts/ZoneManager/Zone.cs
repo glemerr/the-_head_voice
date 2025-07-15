@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System;
 
 [CreateAssetMenu(menuName = "ZoneConfig/Zone", fileName = "newZone")]
 public class Zone : ScriptableObject
@@ -31,4 +32,9 @@ public class Zone : ScriptableObject
     public string endMessages = "Zone Ended.";
     public string failMessages = "Zone Failed - Time's up!";
     public string completeMessage = "Zone Completed!";
+
+    public static implicit operator GameObject(Zone v)
+    {
+        throw new NotImplementedException();
+    }
 }

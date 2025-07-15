@@ -11,6 +11,11 @@ public class PowerUpPickup : MonoBehaviour
         {
             if (powerUp != null)
             {
+                            NotificationManager.Instance.ShowItemNotification(
+                powerUp.name, 
+                powerUp.description, 
+                powerUp.icon
+            );
                 powerUp.Activate(other.gameObject);
             }
 

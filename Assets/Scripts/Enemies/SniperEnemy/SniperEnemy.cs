@@ -7,40 +7,47 @@ public class SniperEnemy : Enemy
     public GameObject bulletPrefab;
     public Transform firePoint;
     public float bulletSpeed = 25f;
-    public float zoomedFOV = 30f;    // optional: camera‐zoom effect  
+    public float zoomedFOV = 30f;
     public float unzoomedFOV = 60f;
 
-protected override void DoAttack()
-{
-    if (bulletPrefab == null || firePoint == null) return;
+    protected override void DoAttack()
+    {
+        if (bulletPrefab == null || firePoint == null) return;
 
-    // Calculate direction from the firePoint to the player's head level
-    Vector3 dir = (player.position  - firePoint.position).normalized;
+        // PER-ATTACK DAMAGE INDICATOR (Option 1)
+        if (!DI_system.Instance.IsTargetVisible(transform))
+        {
+            DI_system.Instance.CreateIndicator(transform);
+        }
 
-    // Optional: draw ray to debug
-    Debug.DrawRay(firePoint.position, dir * attackRange, Color.red, 1f);
+        Vector3 dir = (player.position - firePoint.position).normalized;
+        
+        GameObject b = Instantiate(bulletPrefab, firePoint.position, Quaternion.LookRotation(dir));
+        SniperBullet bullet = b.GetComponent<SniperBullet>();
+        
+        if (bullet != null)
+        {
+            bullet.speed = bulletSpeed;
+            bullet.damage = attackPower;
+            bullet.direction = dir;
+            bullet.owner = gameObject;  // CRITICAL: Set owner reference
+        }
 
-    // Instantiate and fire bullet regardless of raycast hit
-    GameObject b = Instantiate(bulletPrefab, firePoint.position, Quaternion.LookRotation(dir));
-    Bullet bullet = b.GetComponent<Bullet>();
-    if (bullet != null) bullet.speed = bulletSpeed;
-    bullet.damage = attackPower; // Set damage for bullet logic
-    bullet.direction = dir; // Set bullet direction
-
-    Rigidbody rb = b.GetComponent<Rigidbody>();
-    if (rb != null) rb.linearVelocity = dir * bulletSpeed;
-
-    //Debug.Log("Fired " + bulletSpeed + " " + bulletPrefab.name + " Dir " + dir);
-}
+        Rigidbody rb = b.GetComponent<Rigidbody>();
+        if (rb != null) rb.linearVelocity = dir * bulletSpeed;
+    }
 
     protected override void Update()
     {
-        // Optional: zoom in while aiming
+        // Handle camera zoom
         if (currentState == State.Chase || currentState == State.Attack)
         {
             Camera.main.fieldOfView = zoomedFOV;
         }
-        else Camera.main.fieldOfView = unzoomedFOV;
+        else 
+        {
+            Camera.main.fieldOfView = unzoomedFOV;
+        }
 
         base.Update();
     }

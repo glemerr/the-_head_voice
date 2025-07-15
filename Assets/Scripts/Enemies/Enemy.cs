@@ -124,9 +124,11 @@ public abstract class Enemy : MonoBehaviour
         float deathAnimLength = 1.5f; // Ajusta según la duración de la animación
         yield return new WaitForSeconds(deathAnimLength);
         ItemManager manager = FindFirstObjectByType<ItemManager>();
+        //Debug.Log("Enemy destroyed");
         if (manager != null)
         {
             manager.TrySpawnRandomItem(transform.position);
+            //Debug.Log("Enemy destroyed");
         }
         Destroy(gameObject);
     }

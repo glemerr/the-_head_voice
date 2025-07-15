@@ -32,7 +32,7 @@ public class DI_system : MonoBehaviour
     public void CreateIndicator(Transform target)
     {
         if (!target) return;
-        Debug.Log($"Creating indicator for {target.name}");
+        //Debug.Log($"Creating indicator for {target.name}");
         if (indicators.TryGetValue(target, out var indicator))
         {
             indicator.RestartTimer();

@@ -9,6 +9,9 @@ public class ZoneTrigger : MonoBehaviour
 
     public Transform[] spawnPoints;
     private EnemyManager enemyManager;
+
+    [Header("Perimeter Settings")]
+    public PerimeterSpawner perimeterSpawner;
     public void Initialize(ZoneManager manager)
     {
         zoneManager = manager;

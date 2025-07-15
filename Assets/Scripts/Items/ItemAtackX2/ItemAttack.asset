@@ -22,7 +22,7 @@ MonoBehaviour:
   projectileSpeedBonus: 0
   clipSizeBonus: 0
   reloadTimeBonus: 0
-  itemName: DobbleAttack
+  itemName: "DUPLICADOR DE DA\xD1O"
   itemDescription: "duplica el da\xF1o de tus disparos."
   itemIcon: {fileID: 21300000, guid: 5b4600f02bae6c146987a09c63246c87, type: 3}
   itemColor: {r: 0.18431373, g: 0.21176472, b: 0.28627452, a: 1}

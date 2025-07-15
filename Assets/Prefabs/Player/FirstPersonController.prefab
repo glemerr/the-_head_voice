@@ -5305,8 +5305,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6442026882897404759}
   - component: {fileID: 5851432327742227951}
-  - component: {fileID: 5093617159356869899}
   - component: {fileID: 5746476573698723482}
+  - component: {fileID: 5093617159356869899}
   m_Layer: 0
   m_Name: GunSpawn
   m_TagString: Untagged
@@ -5342,6 +5342,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   equippedItems: []
+  maxPerItems: 3
+  itemCountsList: []
+--- !u!114 &5746476573698723482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7040405072666924684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e79fa5edf0010ec48b5aa3103ea66a86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allGuns:
+  - {fileID: 11400000, guid: 953b6cac1fda98948b2c3341ea233da3, type: 2}
+  - {fileID: 11400000, guid: a842fd936c95d644a9c2ff1d0e737da7, type: 2}
+  guns:
+  - {fileID: 11400000, guid: c3982d6f091de104b87cc6075d5afdfc, type: 2}
+  gunSpawnModel: {fileID: 6442026882897404759}
+  inventory: {fileID: 5851432327742227951}
+  isPaused: 0
+  switchGunTime: 0.5
+  MaxGuns: 2
 --- !u!120 &5093617159356869899
 LineRenderer:
   serializedVersion: 2
@@ -5449,28 +5473,6 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
---- !u!114 &5746476573698723482
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7040405072666924684}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e79fa5edf0010ec48b5aa3103ea66a86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  allGuns:
-  - {fileID: 11400000, guid: 953b6cac1fda98948b2c3341ea233da3, type: 2}
-  - {fileID: 11400000, guid: a842fd936c95d644a9c2ff1d0e737da7, type: 2}
-  guns:
-  - {fileID: 11400000, guid: c3982d6f091de104b87cc6075d5afdfc, type: 2}
-  gunSpawnModel: {fileID: 6442026882897404759}
-  inventory: {fileID: 5851432327742227951}
-  isPaused: 0
-  switchGunTime: 0.5
-  MaxGuns: 2
 --- !u!1 &8301596331789722825
 GameObject:
   m_ObjectHideFlags: 0

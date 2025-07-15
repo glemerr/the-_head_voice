@@ -115,7 +115,12 @@ public class ParticleAttractor : MonoBehaviour
             lifeSystem.Heal(totalHeal);
 
             // (Optional) Debug
-            Debug.Log($"Ate {numEntered} particles, healed {totalHeal} HP");
+            // Debug.Log($"Ate {numEntered} particles, healed {totalHeal} HP");
+            
+            // NotificationManager.Instance.ShowMissionNotification(
+            //     "HEALING", 
+            //     $"Ate {numEntered} particles, healed {totalHeal} HP"
+            // );
         }
     }
 }

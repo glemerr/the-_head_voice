@@ -28,7 +28,7 @@ MonoBehaviour:
   - enemyPrefab: {fileID: 295048798979671064, guid: dd1bb873159f2b749af8dc1f23096bae, type: 3}
     enemyCount: 2
   enemySpawnRate: 5
-  maxTime: 320
+  maxTime: 150
   difficultyLevel: 1
   startMessages: Zone Started.
   progessMessages: 'Enemie restants: {0}'

@@ -10,7 +10,7 @@ public class HealingPowerUp : PowerUp
         LifeSystem lifeSystem = player.GetComponent<LifeSystem>();
         if (lifeSystem != null)
         {
-            lifeSystem.Heal(healAmount);
+            lifeSystem.Heal(this.healAmount);
         }
     }
 }

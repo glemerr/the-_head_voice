@@ -7,7 +7,7 @@ public class ItemManager : MonoBehaviour
     [SerializeField] private List<ItemPrefab> items = new List<ItemPrefab>();
     [Range(0f, 1f)]
  
-    [SerializeField] private float spawnProbability = 0.2f;
+    [SerializeField] private float spawnProbability = 0.3f;
     [Header("Spawn Chances (must sum ≤ 1)")]
     [Range(0f, 1f)] public float genericChance = 0.2f;
     [Range(0f, 1f)] public float speedChance   = 0.2f;
@@ -37,12 +37,13 @@ public class ItemManager : MonoBehaviour
     {
         float roll = Random.value;   // [0,1)
         float cumulative = 0f;
-
+        Debug.Log($"ItemManager: Trying to spawn item at {position} with roll {roll}");
         // 1) Genérico
         cumulative += genericChance;
         if (roll < cumulative)
         {
             SpawnGeneric(position);
+            //Debug.Log("Generic item spawned at " + position);
             return;
         }
 
@@ -50,7 +51,9 @@ public class ItemManager : MonoBehaviour
         cumulative += speedChance;
         if (roll < cumulative)
         {
-            Instantiate(speedPickupPrefab, position, Random.rotation);
+            GameObject timeBonus= Instantiate(speedPickupPrefab, position, Random.rotation);
+            timeBonus.GetComponent<TimeBonus>().target = player;
+            //Debug.Log("Speed item spawned at " + position);
             return;
         }
 
@@ -60,9 +63,9 @@ public class ItemManager : MonoBehaviour
         {
             GameObject healthC=Instantiate(healthPickupPrefab, position, Random.rotation);
             healthC.GetComponent<ParticleAttractor>().target = player;
+            //Debug.Log("Health item spawned at " + position);
             return;
         }
-
         // 4) Ningún ítem (roll ≥ cumulative): no hacemos nada
     }
 

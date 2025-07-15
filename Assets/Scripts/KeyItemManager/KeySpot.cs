@@ -112,11 +112,11 @@ public class KeySpot : MonoBehaviour
     private bool IsBehindCamera(Vector3 worldPos)
     {
         return Vector3.Dot(worldPos - mainCamera.transform.position, 
-                          mainCamera.transform.forward) < 0;
+                        mainCamera.transform.forward) < 0;
     }
 
     private void CalculateOffscreenPosition(Vector3 screenPos, bool isBehind, 
-                                          out Vector3 targetPos, out Quaternion targetRot)
+                        out Vector3 targetPos, out Quaternion targetRot)
     {
         if (isBehind) screenPos *= -1;
 
@@ -192,20 +192,29 @@ public class KeySpot : MonoBehaviour
     {
         var prefab = keyItemManager.GetItemPrefab(itemType);
         if (prefab) Instantiate(prefab, transform.position, transform.rotation);
+        NotificationManager.Instance.ShowMissionNotification(
+                $"Item Collected{itemType}", 
+                " Collected" + itemType.ToString() + "!"
+            );
     }
 
     private void SpawnRandomGun()
     {
         if (gunManager == null || gunManager.allGuns.Count == 0) return;
-        
+
         int idx = Random.Range(0, gunManager.allGuns.Count);
         var selectedGun = gunManager.allGuns[idx];
-        
+
         if (!gunManager.guns.Contains(selectedGun))
         {
             gunManager.guns.Add(selectedGun);
             gunManager.EquipGun(gunManager.guns.Count - 1);
         }
+        NotificationManager.Instance.ShowItemNotification(
+                selectedGun.weaponName,
+                "Collected a new gun!"+ selectedGun.weaponName,
+                selectedGun.weaponIcon
+        );
     }
 
     public void DestroyKeyUI()

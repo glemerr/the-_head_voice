@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2690668372586588803}
   - component: {fileID: 4383249739688585045}
   - component: {fileID: 5850775363740106580}
-  - component: {fileID: -7870567120686859688}
+  - component: {fileID: 8232470814866744021}
   m_Layer: 0
   m_Name: EnemieBazuca
   m_TagString: Enemy
@@ -164,7 +164,7 @@ MonoBehaviour:
   OnDeath:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -7870567120686859688}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: EnemyDisintegrator, Assembly-CSharp
         m_MethodName: Disintegrate
         m_Mode: 1
@@ -237,12 +237,12 @@ MonoBehaviour:
   fleeHealthThreshold: 20
   attackCooldown: 1.5
   healthUI: {fileID: 4383249739688585045}
-  bulletPrefab: {fileID: 1000012600307132, guid: 20c0f7e297297fc468f9740f6bb08cb1, type: 3}
+  bulletPrefab: {fileID: 1000012600307132, guid: f9bdc0b72be71394290ffc28147c0b04, type: 3}
   firePoint: {fileID: 344247737400539290}
   bulletSpeed: 40
   zoomedFOV: 30
   unzoomedFOV: 60
---- !u!114 &-7870567120686859688
+--- !u!114 &8232470814866744021
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -251,12 +251,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 295048798979671064}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8f250e6f42b6d044a2811198a28ee45, type: 3}
+  m_Script: {fileID: 11500000, guid: 69afe6d14e2c3f84392747ba1a4cda10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dissolveMaterial: {fileID: 2100000, guid: 52bfad9cda054554a849c182c74fa52f, type: 2}
-  dissolveDuration: 1.5
-  disintegratePrefab: {fileID: 1420486650935039126, guid: 030e4eab73272fc45a28e013dffb8624, type: 3}
+  speed: 20
+  damage: 10
+  lifetime: 5
+  direction: {x: 0, y: 0, z: 0}
+  owner: {fileID: 295048798979671064}
 --- !u!1 &1270985839333022647
 GameObject:
   m_ObjectHideFlags: 0

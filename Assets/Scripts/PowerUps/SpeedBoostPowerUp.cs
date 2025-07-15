@@ -11,6 +11,7 @@ public class SpeedBoostPowerUp : PowerUp
         FirstPersonController controller = player.GetComponent<FirstPersonController>();
         if (controller != null)
         {
+
             controller.StartCoroutine(ApplySpeedBoost(controller));
         }
     }

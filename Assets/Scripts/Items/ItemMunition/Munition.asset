@@ -22,7 +22,7 @@ MonoBehaviour:
   projectileSpeedBonus: 2
   clipSizeBonus: 2
   reloadTimeBonus: 0
-  itemName: "Doble munici\xF3n"
-  itemDescription: "Duplica la munici\xF3n"
+  itemName: "AUMENTO DE MUNICI\xD6N"
+  itemDescription: "Mejora la capacidad de munici\xF3n de todas las armas."
   itemIcon: {fileID: 21300000, guid: 21624781aa4933746ac24f2dca821026, type: 3}
   itemColor: {r: 0.20000002, g: 0.50980395, b: 0.2627451, a: 0}

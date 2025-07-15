@@ -103,10 +103,12 @@ public class KeyItemManager : MonoBehaviour
     private void CompleteInteraction()
     {
         if (currentSpot == null) return;
-        
+
         currentSpot.SpawnItem();
         currentSpot = null;
         ResetKeyPress();
+
+
     }
 
     public void ActivateSpot(KeySpot spot)

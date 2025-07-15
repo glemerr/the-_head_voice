@@ -6,7 +6,7 @@ public class PowerUpsManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     [Header("Power-Up Settings")]
     [Range(0f, 1f)]
-    [SerializeField] private float spawnProbability = 0.2f; // Probability of
+    [SerializeField] private float spawnProbability = 0.1f; // Probability of
     public List<PowerUpPickup> powerUpPickups = new List<PowerUpPickup>();
 
     [Header("Spawn Settings")]

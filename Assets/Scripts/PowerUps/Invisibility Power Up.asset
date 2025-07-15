@@ -13,3 +13,9 @@ MonoBehaviour:
   m_Name: Invisibility Power Up
   m_EditorClassIdentifier: 
   duration: 5
+  powerUpName: Invisibility
+  description: Los Enemigos no pueden detectarte
+  icon: {fileID: 21300002, guid: 1c1f5fdffb8c5a944a978e8debb8fdfe, type: 3}
+  effectStrength: 5
+  extraEffectStrength: 10
+  cooldownTime: 10

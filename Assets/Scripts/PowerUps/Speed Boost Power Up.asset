@@ -13,4 +13,10 @@ MonoBehaviour:
   m_Name: Speed Boost Power Up
   m_EditorClassIdentifier: 
   duration: 5
+  powerUpName: Speed Boost
+  description: Incrementa la velocidad del player
+  icon: {fileID: 21300000, guid: abfe47f6e1a90914d87641a653d1348e, type: 3}
+  effectStrength: 1
+  extraEffectStrength: 0
+  cooldownTime: 10
   speedMultiplier: 2

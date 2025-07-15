@@ -13,4 +13,10 @@ MonoBehaviour:
   m_Name: Healing Power Up
   m_EditorClassIdentifier: 
   duration: 5
-  healAmount: 30
+  powerUpName: Healing
+  description: Recupera el 100%% de la salud del player
+  icon: {fileID: 21300000, guid: 2c5fbe6415c046b4d80787347c7c0e59, type: 3}
+  effectStrength: 100
+  extraEffectStrength: 0
+  cooldownTime: 0
+  healAmount: 100

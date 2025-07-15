@@ -22,7 +22,7 @@ MonoBehaviour:
   projectileSpeedBonus: 0
   clipSizeBonus: 0
   reloadTimeBonus: 0
-  itemName: FireRate
-  itemDescription: 'reduce el cooldown de las armas '
+  itemName: REDUCTOR DE COOLDOWN
+  itemDescription: Disminuye el cooldown de los disparos
   itemIcon: {fileID: 21300000, guid: 21624781aa4933746ac24f2dca821026, type: 3}
   itemColor: {r: 0.4039216, g: 0.3019608, b: 0.1764706, a: 0}

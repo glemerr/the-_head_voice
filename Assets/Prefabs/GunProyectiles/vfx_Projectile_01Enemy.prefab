@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5966294938554539103}
   - component: {fileID: 2311826027236132685}
   - component: {fileID: 6439728051045555739}
-  - component: {fileID: 2171628241475011335}
+  - component: {fileID: 3310055618374520500}
   m_Layer: 0
   m_Name: vfx_Projectile_01Enemy
   m_TagString: Bullet
@@ -4907,7 +4907,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2171628241475011335
+--- !u!114 &3310055618374520500
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4916,13 +4916,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 49082832453189840}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d40e656ae8f1dc5468c8b65b37524fc0, type: 3}
+  m_Script: {fileID: 11500000, guid: 22ac68900153bf1429dd785b4a78d994, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
   damage: 10
   lifetime: 5
   direction: {x: 0, y: 0, z: 0}
+  enemyImpactEffect:
+    hitParticlePrefab: {fileID: 0}
+    hitSound: {fileID: 0}
+    hitSoundVolume: 0.7
+  defaultImpactEffect:
+    hitParticlePrefab: {fileID: 0}
+    hitSound: {fileID: 0}
+    hitSoundVolume: 0.7
+  destroyTimer: 5
+  owner: {fileID: 295048798979671064, guid: 514bcc5974c005d428db5d075b3f75e0, type: 3}
 --- !u!1 &1167722015711449191
 GameObject:
   m_ObjectHideFlags: 0
