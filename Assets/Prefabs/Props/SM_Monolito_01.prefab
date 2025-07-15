@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 375516411417817439}
   - component: {fileID: 6130978880632311119}
   - component: {fileID: 3805621066498817662}
+  - component: {fileID: 2986975413445622471}
   m_Layer: 0
   m_Name: SM_Monolito_01
   m_TagString: Untagged
@@ -88,3 +89,25 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2986975413445622471
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5421045046273525946}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8030705066566074389, guid: 80420096fc945cc4f868dabf9753978d, type: 3}
