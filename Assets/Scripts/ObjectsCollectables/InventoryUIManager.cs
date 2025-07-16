@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using System.Collections.Generic;
 
 public class InventoryUIManager : MonoBehaviour
@@ -10,8 +11,8 @@ public class InventoryUIManager : MonoBehaviour
     [SerializeField] private GameObject inventoryPanel;
     [SerializeField] private Transform slotsContainer;
     [SerializeField] private GameObject slotPrefab;
-    [SerializeField] private Text itemNameText;
-    [SerializeField] private Text itemDescriptionText;
+    [SerializeField] private TextMeshProUGUI itemNameText;
+    [SerializeField] private TextMeshProUGUI itemDescriptionText;
     [SerializeField] private Image itemIcon;
 
     void Awake()

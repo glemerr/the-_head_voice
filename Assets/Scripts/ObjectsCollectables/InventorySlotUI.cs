@@ -1,11 +1,12 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using TMPro;
 
 public class InventorySlotUI : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private Image iconImage;
-    [SerializeField] private Text quantityText;
+    [SerializeField] private TextMeshProUGUI quantityText;
 
     private InventorySlot currentSlot;
 
