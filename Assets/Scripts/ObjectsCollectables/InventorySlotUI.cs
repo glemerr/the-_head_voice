@@ -3,40 +3,48 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
 
-public class InventorySlotUI : MonoBehaviour, IPointerClickHandler
+public class InventorySlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    [SerializeField] private Image iconImage;
-    [SerializeField] private TextMeshProUGUI quantityText;
+    [Header("UI References")]
+    [SerializeField] private Image icon;
+    [SerializeField] private TextMeshProUGUI quantity;
+    [SerializeField] private GameObject highlight;
 
-    private InventorySlot currentSlot;
+    private InventorySlot slot;
+    private InventoryUIManager uiManager;
 
-    public void Initialize(InventorySlot slot)
+    public void Initialize(InventorySlot slot, InventoryUIManager manager)
     {
-        currentSlot = slot;
-        iconImage.sprite = slot.collectable.icon;
-        quantityText.text = slot.collectable.isStackable ? slot.quantity.ToString() : "";
+        // Null check all critical components
+        if (slot == null || slot.collectable == null || manager == null)
+        {
+            Debug.LogError("InventorySlotUI initialization failed: Missing required references");
+            return;
+        }
+
+        this.slot = slot;
+        this.uiManager = manager;
+        
+        // Set UI elements with null checks
+        if (icon != null) icon.sprite = slot.collectable.icon;
+        if (quantity != null) quantity.text = slot.collectable.isStackable ? slot.quantity.ToString() : "";
+        if (highlight != null) highlight.SetActive(false);
     }
 
-    public void OnPointerClick(PointerEventData eventData)
+    public void OnPointerEnter(PointerEventData eventData)
     {
-        if (eventData.button == PointerEventData.InputButton.Left)
-        {
-            // Show collectable info
-            InventoryUIManager.Instance.ShowCollectableInfo(currentSlot.collectable);
-        }
-        else if (eventData.button == PointerEventData.InputButton.Right)
-        {
-            // Use/drop collectable
-            if (currentSlot.collectable.isUsable)
-            {
-                Debug.Log($"Using {currentSlot.collectable.displayName}");
-                // Implement usage logic
-            }
-            else if (currentSlot.collectable.isDroppable)
-            {
-                InventoryManager.Instance.RemoveCollectable(currentSlot.collectable.collectableID);
-                // Implement drop logic in the world
-            }
-        }
+        if (slot == null || slot.collectable == null || uiManager == null) return;
+        uiManager.SelectCollectable(slot.collectable, this);
+        SetHighlight(true);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        SetHighlight(false);
+    }
+
+    public void SetHighlight(bool state)
+    {
+        if (highlight != null) highlight.SetActive(state);
     }
 }

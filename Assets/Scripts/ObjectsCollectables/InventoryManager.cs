@@ -74,5 +74,14 @@ public class InventoryManager : MonoBehaviour
     }
 
     public List<InventorySlot> GetAllSlots() => new List<InventorySlot>(slots);
+    public InventorySlot GetSlot(CollectableType collectableType)
+    {
+        foreach (InventorySlot slot in slots)
+        {
+            if (slot.collectable.collectableType == collectableType)
+                return slot;
+        }
+        return null;
+    }
     public int GetEmptySlotCount() => maxSlots - slots.Count;
 }

@@ -9,6 +9,7 @@ public class DialogueTrigger : MonoBehaviour
 
     [Header("Referencias")]
     [SerializeField] private DialogueManager dialogueManager;
+    [SerializeField] private ZoneTrigger zoneTrigger;
 
     private void Awake()
     {
@@ -16,11 +17,16 @@ public class DialogueTrigger : MonoBehaviour
         if (dialogueManager == null)
             Debug.LogError("No se encontró DialogueManager en la escena.");
     }
-
+    // private void Start()
+    // {
+    //     if (zoneTrigger == null)
+    //         Debug.LogError("No se encontró ZoneTrigger en la escena.");
+    // }
     private void OnTriggerEnter(Collider other)
     {
         // Asume que el jugador tiene tag "Player"
-        if (other.CompareTag("Player"))
+
+        if (other.CompareTag("Player") && zoneTrigger != null && !zoneTrigger.isActive)
         {
             dialogueManager.StartDialogue(introSecuencia);
             // Desactivar este trigger para que no vuelva a dispararse

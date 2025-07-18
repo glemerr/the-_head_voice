@@ -31,7 +31,7 @@ public class EnemyManager : MonoBehaviour
     public void ConfigureForZone(Zone zoneConfig)
     {
         currentZone = zoneConfig;
-        totalEnemiesToSpawn = zoneConfig.totalEnemies;
+        totalEnemiesToSpawn = zoneConfig.totalEnemies+10;
         enemiesSpawned = 0;
     }
 

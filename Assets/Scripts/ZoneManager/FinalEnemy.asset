@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de7caa53cc01fed4f953d0e6c045a835, type: 3}
+  m_Name: FinalEnemy
+  m_EditorClassIdentifier: 
+  zoneName: FinalEnemy
+  gizmoColor: {r: 0, g: 1, b: 1, a: 1}
+  size: {x: 0, y: 0}
+  offset: {x: 0, y: 0}
+  totalEnemies: 1
+  maxConcurrentEnemies: 1
+  healthMultiplier: 1
+  damageMultiplier: 1
+  enemyTypes:
+  - enemyPrefab: {fileID: 295048798979671064, guid: 514bcc5974c005d428db5d075b3f75e0, type: 3}
+    enemyCount: 1
+  enemySpawnRate: 1
+  maxTime: 300
+  difficultyLevel: 2
+  startMessages: 'Final Boss: Bienvenido al umbral del terror'
+  progessMessages: " Es tu momento de brillar: demuestra de qu\xE9 est\xE1s hecho."
+  endMessages: Venciste todos tus miedos
+  failMessages: La sombra interna te envuelve y sucumbes al caos mental.
+  completeMessage: "Has derrotado a tu Miedo y emergido m\xE1s fuerte."
