@@ -76,7 +76,19 @@ public class GunManager : MonoBehaviour
         if (firePoint == null)
         {
             Debug.LogError("Fire Point not found! Please assign a Fire Point in the GunManager.");
-        }      
+        }
+        NotificationManager.Instance.ShowMissionNotification(
+                "Movimientos:",
+            "usa W,A,S,D para mover"
+        );
+        NotificationManager.Instance.ShowMissionNotification(
+            "Movimientos:",
+            "usa R para recargar"
+        );
+        NotificationManager.Instance.ShowMissionNotification(
+            "DISPARAR:",
+            "Usa el mouse para disparar"
+        );            
     }
 
     void Update()

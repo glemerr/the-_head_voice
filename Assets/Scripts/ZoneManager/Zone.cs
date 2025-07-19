@@ -25,6 +25,7 @@ public class Zone : ScriptableObject
     public float enemySpawnRate = 1.0f;
     public float maxTime = 300f;
     public int difficultyLevel = 1;
+    
 
     [Header("Zone UI text")]
     public string startMessages = "Zone Started!";

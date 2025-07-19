@@ -26,7 +26,13 @@ public class DialogueTrigger : MonoBehaviour
     {
         // Asume que el jugador tiene tag "Player"
 
-        if (other.CompareTag("Player") && zoneTrigger != null && !zoneTrigger.isActive)
+        if (other.CompareTag("Player") && zoneTrigger != null && zoneTrigger.isZonefinished)
+        {
+            dialogueManager.StartDialogue(introSecuencia);
+            // Desactivar este trigger para que no vuelva a dispararse
+            enabled = false;
+        }
+        if (other.CompareTag("Player") && zoneTrigger == null)
         {
             dialogueManager.StartDialogue(introSecuencia);
             // Desactivar este trigger para que no vuelva a dispararse
@@ -38,7 +44,11 @@ public class DialogueTrigger : MonoBehaviour
         // Aquí podrías manejar la lógica al salir del trigger, si es necesario
         // Por ejemplo, podrías reactivar el trigger si quieres que se pueda volver a activar
         // enabled = true;
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && zoneTrigger != null && zoneTrigger.isZonefinished)
+        {
+            Destroy(gameObject); // Destruye el objeto del trigger al salir
+        }
+        if (other.CompareTag("Player") && zoneTrigger == null)
         {
             Destroy(gameObject); // Destruye el objeto del trigger al salir
         }

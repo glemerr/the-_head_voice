@@ -137,7 +137,7 @@ public class ZoneManager : MonoBehaviour
         enemyManager.StopSpawning();
         enemyManager.ClearAllEnemies();
         isZoneActive = false;
-
+        activeZone.isZonefinished = true;
         // Destroy perimeter walls
         if (activeZone != null && activeZone.perimeterSpawner != null)
         {

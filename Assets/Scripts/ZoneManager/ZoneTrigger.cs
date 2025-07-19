@@ -3,6 +3,7 @@ using UnityEngine;
 public class ZoneTrigger : MonoBehaviour
 {
     public bool isActive = false;
+    public bool isZonefinished = false;
     public Zone[] zones;
     public Zone currentZone;
     private ZoneManager zoneManager;
