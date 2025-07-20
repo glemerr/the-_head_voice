@@ -17,16 +17,16 @@ MonoBehaviour:
   size: {x: 100, y: 50}
   offset: {x: 0, y: 0}
   totalEnemies: 15
-  maxConcurrentEnemies: 5
+  maxConcurrentEnemies: 4
   healthMultiplier: 0.5
-  damageMultiplier: 1
+  damageMultiplier: 0.5
   enemyTypes:
   - enemyPrefab: {fileID: 35783984430232860, guid: de2b687966c4ab24bb5608dd250fcdf0, type: 3}
     enemyCount: 2
     spawnParticleEffect: {fileID: 3958596659431381315, guid: a181d83ed1bbbca42841d712a384fe91, type: 3}
     particleDuration: 1
-  enemySpawnRate: 5
-  maxTime: 180
+  enemySpawnRate: 8
+  maxTime: 210
   difficultyLevel: 1
   startMessages: Zone Started.
   progessMessages: 'Enemie restants: {0}'
