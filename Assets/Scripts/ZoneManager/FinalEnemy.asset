@@ -21,7 +21,7 @@ MonoBehaviour:
   healthMultiplier: 1
   damageMultiplier: 1
   enemyTypes:
-  - enemyPrefab: {fileID: 295048798979671064, guid: 514bcc5974c005d428db5d075b3f75e0, type: 3}
+  - enemyPrefab: {fileID: 6903303777861326198, guid: 702410d5d68b52a44a04426d430a04e5, type: 3}
     enemyCount: 1
   enemySpawnRate: 1
   maxTime: 300
