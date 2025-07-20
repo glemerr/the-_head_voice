@@ -9870,7 +9870,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1370700257}
   m_HandleRect: {fileID: 1370700256}
   m_Direction: 2
-  m_Value: 0.99999994
+  m_Value: 1.0000001
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -17763,7 +17763,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 1.3396e-41, y: 2.524355e-29, z: 0, w: 2.7470774e+20}
+  m_BoundingSphereOverride: {x: 2.714094e-20, y: 9.091819e-39, z: 2.133e-41, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ForceVisible: 0
@@ -22457,7 +22457,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 1.3971e-41, y: 2.524355e-29, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 2.7105054e-20, y: 6.887767e-39, z: 2.4718e-41, w: 1.6071212e-38}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ForceVisible: 0
@@ -36547,8 +36547,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 509130996}
   m_HandleRect: {fileID: 509130995}
   m_Direction: 0
-  m_Value: 0
-  m_Size: 1
+  m_Value: 1
+  m_Size: 0.99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -49581,10 +49581,10 @@ SceneRoots:
   - {fileID: 1259767699}
   - {fileID: 2114535809}
   - {fileID: 75431410}
-  - {fileID: 182063678}
   - {fileID: 1717864479}
   - {fileID: 1052996586}
   - {fileID: 1968945507}
   - {fileID: 1382173422}
   - {fileID: 5424511720583242447}
   - {fileID: 764964917}
+  - {fileID: 182063678}
