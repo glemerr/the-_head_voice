@@ -42,7 +42,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 2
-  m_Color: {r: 0.9334968, g: 0.9339623, b: 0.9295568, a: 1}
+  m_Color: {r: 0.18823531, g: 0.45882356, b: 0.5686275, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 6591750097078011848}
   - component: {fileID: 5324290111863768748}
   m_Layer: 0
-  m_Name: Letter
+  m_Name: Teddy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -253,7 +253,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a1a428f080f2e2c49b0c70cc3f0d4083, type: 2}
+  - {fileID: 2100000, guid: 9c6920383d410bb46b387eb5a6769eea, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5041,14 +5041,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1ce3662ff42da64988585e5f109ee79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableData: {fileID: 11400000, guid: dbccde98e09ade848aedd18f7a60f41f, type: 2}
+  collectableData: {fileID: 11400000, guid: 349db9cb1ac6aed439bb555701289835, type: 2}
   quantity: 1
-  pickupRadius: 1.5
+  pickupRadius: 3
   pickupEffect: {fileID: 8593464584776411535, guid: 5bb7f904751fc2944ab0f46747483d78, type: 3}
-  yOffset: 0.5
+  yOffset: 0.6
   edgeBuffer: 50
-  smoothTime: 0.001
+  smoothTime: 0.002
   maxDistance: 20
-  minScale: 1
-  maxScale: 2
+  minScale: 0.5
+  maxScale: 1.2
   keyUIPrefab: {fileID: 7151041455708042755, guid: 33dd0eb2c87a4ff4aa04221c834aaf88, type: 3}
