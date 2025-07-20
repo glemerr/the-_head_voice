@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 2659970231608632259}
   - component: {fileID: 2631116256453296026}
   - component: {fileID: 4829553392720476525}
-  - component: {fileID: 500637390754293551}
   - component: {fileID: 6801137051779486407}
+  - component: {fileID: 500637390754293551}
   - component: {fileID: -8588163724285901743}
   - component: {fileID: -9031112264228973788}
   - component: {fileID: 892719183382217987}
@@ -139,6 +139,33 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!54 &6801137051779486407
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 248364554812170147}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!114 &500637390754293551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,33 +202,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!54 &6801137051779486407
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 248364554812170147}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &-8588163724285901743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,7 +250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8f250e6f42b6d044a2811198a28ee45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dissolveMaterialTemplate: {fileID: 2100000, guid: 8bdf4adea93dde54eb25a484d7bb8ddd, type: 2}
+  dissolveMaterialTemplates: []
   dissolveDuration: 1.5
   disintegratePrefab: {fileID: 1420486650935039126, guid: 030e4eab73272fc45a28e013dffb8624, type: 3}
   particleLifetime: 2

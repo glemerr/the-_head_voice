@@ -23,6 +23,8 @@ MonoBehaviour:
   enemyTypes:
   - enemyPrefab: {fileID: 35783984430232860, guid: de2b687966c4ab24bb5608dd250fcdf0, type: 3}
     enemyCount: 2
+    spawnParticleEffect: {fileID: 3958596659431381315, guid: a181d83ed1bbbca42841d712a384fe91, type: 3}
+    particleDuration: 1
   enemySpawnRate: 5
   maxTime: 180
   difficultyLevel: 1

@@ -17,6 +17,12 @@ public class KeySpot : MonoBehaviour
     [SerializeField] private float maxScale = 1.2f;
     [SerializeField] private GameObject keyUIPrefab;
 
+    [Header("Pickup Particle Effect")]
+    [Tooltip("Particle effect prefab to spawn when item is picked up")]
+    [SerializeField] private GameObject pickupParticlePrefab;
+    [Tooltip("How long the particle effect lives before auto‐destroy")]
+    [SerializeField] private float pickupParticleLifetime = 1.5f;
+
     private KeyItemManager keyItemManager;
     private GunManager gunManager;
     private Camera mainCamera;
@@ -47,7 +53,7 @@ public class KeySpot : MonoBehaviour
     private void InitializeUI()
     {
         if (!keyUIPrefab || !mainCanvas) return;
-        
+
         keyItemUI = Instantiate(keyUIPrefab, mainCanvas.transform);
         uiRectTransform = keyItemUI.GetComponent<RectTransform>();
         keyItemUI.SetActive(false);
@@ -62,7 +68,7 @@ public class KeySpot : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("Player")) return;
-        
+
         playerInTrigger = true;
         keyItemManager.ActivateSpot(this);
         ShowPickupUIMessage();
@@ -71,7 +77,7 @@ public class KeySpot : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         if (!other.CompareTag("Player")) return;
-        
+
         playerInTrigger = false;
         HidePickupUIMessage();
         keyItemManager.DeactivateSpot();
@@ -111,12 +117,12 @@ public class KeySpot : MonoBehaviour
 
     private bool IsBehindCamera(Vector3 worldPos)
     {
-        return Vector3.Dot(worldPos - mainCamera.transform.position, 
-                        mainCamera.transform.forward) < 0;
+        return Vector3.Dot(worldPos - mainCamera.transform.position,
+                          mainCamera.transform.forward) < 0;
     }
 
-    private void CalculateOffscreenPosition(Vector3 screenPos, bool isBehind, 
-                        out Vector3 targetPos, out Quaternion targetRot)
+    private void CalculateOffscreenPosition(Vector3 screenPos, bool isBehind,
+                                            out Vector3 targetPos, out Quaternion targetRot)
     {
         if (isBehind) screenPos *= -1;
 
@@ -125,7 +131,6 @@ public class KeySpot : MonoBehaviour
         Vector3 dir = (screenPos - screenCenter).normalized;
         float angle = Mathf.Atan2(dir.y, dir.x);
 
-        // Edge intersection calculation
         float slope = Mathf.Tan(angle);
         if (Mathf.Abs(slope) > (bounds.y / bounds.x))
         {
@@ -151,9 +156,9 @@ public class KeySpot : MonoBehaviour
     private void ApplyUIMovement(Vector3 targetPos, Quaternion targetRot)
     {
         keyItemUI.transform.position = Vector3.SmoothDamp(
-            keyItemUI.transform.position, 
-            targetPos, 
-            ref uiVelocity, 
+            keyItemUI.transform.position,
+            targetPos,
+            ref uiVelocity,
             smoothTime
         );
 
@@ -173,8 +178,10 @@ public class KeySpot : MonoBehaviour
 
     public void SpawnItem()
     {
+        // 1. Remove the UI
         DestroyKeyUI();
-        
+
+        // 2. Spawn the actual item
         switch (itemType)
         {
             case KeyItemType.Gun:
@@ -184,18 +191,32 @@ public class KeySpot : MonoBehaviour
                 SpawnDefaultItem();
                 break;
         }
-        
+
+        // 3. Spawn pickup particle effect
+        if (pickupParticlePrefab != null)
+        {
+            var particles = Instantiate(
+                pickupParticlePrefab,
+                transform.position+Vector3.up*0.5f,
+                Quaternion.identity
+            );
+            Destroy(particles, pickupParticleLifetime);
+        }
+
+        // 4. Destroy this spot object
         Destroy(gameObject);
     }
 
     private void SpawnDefaultItem()
     {
         var prefab = keyItemManager.GetItemPrefab(itemType);
-        if (prefab) Instantiate(prefab, transform.position, transform.rotation);
+        if (prefab)
+            Instantiate(prefab, transform.position, transform.rotation);
+
         NotificationManager.Instance.ShowMissionNotification(
-                $"Item Collected{itemType}", 
-                " Collected" + itemType.ToString() + "!"
-            );
+            $"Item Collected: {itemType}",
+            $"You collected a {itemType}!"
+        );
     }
 
     private void SpawnRandomGun()
@@ -210,10 +231,11 @@ public class KeySpot : MonoBehaviour
             gunManager.guns.Add(selectedGun);
             gunManager.EquipGun(gunManager.guns.Count - 1);
         }
+
         NotificationManager.Instance.ShowItemNotification(
-                selectedGun.weaponName,
-                "Collected a new gun!"+ selectedGun.weaponName,
-                selectedGun.weaponIcon
+            selectedGun.weaponName,
+            $"Collected a new gun: {selectedGun.weaponName}",
+            selectedGun.weaponIcon
         );
     }
 
@@ -222,13 +244,10 @@ public class KeySpot : MonoBehaviour
         if (keyItemUI != null)
         {
             if (Application.isPlaying)
-            {
                 Destroy(keyItemUI);
-            }
             else
-            {
                 DestroyImmediate(keyItemUI);
-            }
+
             keyItemUI = null;
         }
     }

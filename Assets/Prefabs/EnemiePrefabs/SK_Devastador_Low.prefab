@@ -168,7 +168,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8f250e6f42b6d044a2811198a28ee45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dissolveMaterialTemplate: {fileID: 2100000, guid: 52bfad9cda054554a849c182c74fa52f, type: 2}
+  dissolveMaterialTemplates:
+  - {fileID: 2100000, guid: f6eed5f3d6c257149b7f9862079cac8d, type: 2}
+  - {fileID: 2100000, guid: 84ec9ce9156ca0f4497bfbb7fc0c1456, type: 2}
+  - {fileID: 2100000, guid: 07a9b1d875e937846bbee9fdf8d1d2b6, type: 2}
   dissolveDuration: 1.5
   disintegratePrefab: {fileID: 1420486650935039126, guid: 030e4eab73272fc45a28e013dffb8624, type: 3}
   particleLifetime: 2

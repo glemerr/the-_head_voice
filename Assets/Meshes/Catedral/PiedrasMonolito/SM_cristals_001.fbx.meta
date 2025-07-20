@@ -9,6 +9,21 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: M_Cristals_001
     second: {fileID: 2100000, guid: fc5cd96353e64ee4383b92d8bdb56aac, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: cristals_Low_BaseColor
+    second: {fileID: 2800000, guid: c1049b3573a77f34e8e557eda035a810, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: cristals_Low_Emission
+    second: {fileID: 2800000, guid: eca64d51672ae7446acaf8a1c8b18610, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: cristals_Low_Normal
+    second: {fileID: 2800000, guid: b0fd3214c10690645a1af696f760cc17, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

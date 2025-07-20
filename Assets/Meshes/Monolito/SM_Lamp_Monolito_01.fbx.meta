@@ -3,7 +3,42 @@ guid: 5fe6134855e2573449f84ae80d42290b
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cristals
+    second: {fileID: 2100000, guid: 66e0b48ac22e4f741b189c4a92f56ba7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Trim_002
+    second: {fileID: 2100000, guid: f36ebd7beb0b4214799b158864d8612a, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TrimSheets_Low_BaseColor
+    second: {fileID: 2800000, guid: 60d3f31510583024c84547498bce7dae, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TrimSheets_Low_Emission
+    second: {fileID: 2800000, guid: d00d45771928fc847b49c42a33213d5f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TrimSheets_Low_Metallic
+    second: {fileID: 2800000, guid: b6e4ced8e92648c479db582c054d2ee0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TrimSheets_Low_Normal
+    second: {fileID: 2800000, guid: f8a6df1319384eb4f8a998f0188f01c6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TrimSheets_Low_Roughness
+    second: {fileID: 2800000, guid: 65b94979f32995c4aa17bc8931d33399, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

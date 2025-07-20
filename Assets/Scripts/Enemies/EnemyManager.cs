@@ -7,6 +7,8 @@ public class EnemySpawnData
 {
     public GameObject enemyPrefab;
     public int enemyCount;
+    public GameObject spawnParticleEffect; // Added for particle effect
+    public float particleDuration = 1f; // Default duration for particle effect
 }
 
 public class EnemyManager : MonoBehaviour
@@ -31,7 +33,7 @@ public class EnemyManager : MonoBehaviour
     public void ConfigureForZone(Zone zoneConfig)
     {
         currentZone = zoneConfig;
-        totalEnemiesToSpawn = zoneConfig.totalEnemies+10;
+        totalEnemiesToSpawn = zoneConfig.totalEnemies + 10;
         enemiesSpawned = 0;
     }
 
@@ -59,53 +61,70 @@ public class EnemyManager : MonoBehaviour
             if (activeEnemies.Count >= currentZone.maxConcurrentEnemies) 
                 continue;
 
-            SpawnEnemy();
+            yield return StartCoroutine(SpawnEnemy()); // Now a coroutine
         }
     }
 
-    private void SpawnEnemy()
+    private IEnumerator SpawnEnemy()
     {
         if (spawnPoints.Length == 0)
         {
             Debug.LogError("No spawn points defined!");
-            return;
+            yield break;
         }
 
         Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
+        EnemySpawnData enemyData = currentZone.enemyTypes[Random.Range(0, currentZone.enemyTypes.Count)];
+
+        // 1. Spawn particle effect if available
+        GameObject particleInstance = null;
+        if (enemyData.spawnParticleEffect != null)
+        {
+            particleInstance = Instantiate(
+                enemyData.spawnParticleEffect,
+                spawnPoint.position,
+                spawnPoint.rotation
+            );
+            
+            // Wait for particle effect to play
+            yield return new WaitForSeconds(enemyData.particleDuration);
+        }
+
+        // 2. Spawn actual enemy
         GameObject enemy = Instantiate(
-            currentZone.enemyTypes[Random.Range(0, currentZone.enemyTypes.Count)].enemyPrefab,
+            enemyData.enemyPrefab,
             spawnPoint.position,
             spawnPoint.rotation
         );
-        //Debug.Log($"Spawned enemy: {enemy.name} at {spawnPoint.position}");
+
         // Configure enemy stats
         Enemy controller = enemy.GetComponent<Enemy>();
-        LifeSystem Deathcontroller = enemy.GetComponent<LifeSystem>();
+        LifeSystem deathController = enemy.GetComponent<LifeSystem>();
 
-        if (controller)
+        if (controller && deathController)
         {
             controller.SetStats(
                 currentZone.healthMultiplier,
                 currentZone.damageMultiplier
             );
-        Deathcontroller.OnDeath.AddListener(() => HandleEnemyDeath(enemy));
+            deathController.OnDeath.AddListener(() => HandleEnemyDeath(enemy));
         }
         else
         {
-            Debug.LogWarning("Spawned enemy does not have an Enemy component!");
+            Debug.LogWarning("Spawned enemy is missing Enemy or LifeSystem component!");
         }
 
         activeEnemies.Add(enemy);
         enemiesSpawned++;
     }
 
-public void HandleEnemyDeath(GameObject enemy)
-{
-    if (!activeEnemies.Contains(enemy)) return;
+    public void HandleEnemyDeath(GameObject enemy)
+    {
+        if (!activeEnemies.Contains(enemy)) return;
 
-    activeEnemies.Remove(enemy);
-    zoneManager.OnEnemyDefeated();
-}
+        activeEnemies.Remove(enemy);
+        zoneManager.OnEnemyDefeated();
+    }
 
     public void ClearAllEnemies()
     {
