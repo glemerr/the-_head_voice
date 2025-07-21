@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4025dce944a8fe4d960d3711323eb3c, type: 3}
+  m_Name: DialogueNode 3
+  m_EditorClassIdentifier: 
+  speakerName: La Abuela
+  dialogueText: "Recuerda: cada sombra es un reflejo de tu propio miedo. Cuando encuentres
+    un enemigo, respira hondo y\u2026\n\nObserva su patr\xF3n: \xBFAtaca desde lejos
+    o te arremete de frente?\n\nNo temas usar lo que encuentres: pociones, escudos
+    y poderes especiales te fortalecer\xE1n."
+  missionTitle: 'Lucy:'
+  missionDescription: "\n\xBFY si fallo, abuela? \xBFY si la oscuridad me atrapa?\n\n"
+  voiceClip: {fileID: 0}

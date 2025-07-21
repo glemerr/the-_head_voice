@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4025dce944a8fe4d960d3711323eb3c, type: 3}
+  m_Name: DialogueNode 5
+  m_EditorClassIdentifier: 
+  speakerName: La Abuela
+  dialogueText: "Conf\xEDa en tu instinto, S\xE9 curiosa: Explora cada rinc\xF3n;
+    a veces, una L\xE1grima de la Luz se oculta tras un muro quebrado.\nEscucha tu
+    interior: Si tu pulso se acelera, t\xF3mate un segundo; el miedo puede ser un
+    aliado si lo comprendes.\n"
+  missionTitle: "Misi\xF3n: Comienza la aventura"
+  missionDescription: 
+  voiceClip: {fileID: 0}

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4025dce944a8fe4d960d3711323eb3c, type: 3}
+  m_Name: DialogueNode 2
+  m_EditorClassIdentifier: 
+  speakerName: La Abuela
+  dialogueText: "Tutorial de Movimiento y Atenci\xF3n\nAvanza con W\nG\xEDrate con
+    A y D\nUsa esos giros para descubrir pasadizos y leer los mensajes escritos en
+    las paredes por mi mano."
+  missionTitle: 
+  missionDescription: "Ret\xEDrate con S\nD para moverte a la derecha"
+  voiceClip: {fileID: 0}
