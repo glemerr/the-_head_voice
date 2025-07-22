@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Ocean (2)
-  m_Shader: {fileID: 4800000, guid: 4889fcee5f0084a4e8a1c45f616a86dd, type: 3}
+  m_Name: T_CrystalMatCap
+  m_Shader: {fileID: 4800000, guid: f0b78352b3b1b8949af7cbae446cb9d2, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -23,24 +23,27 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _Normal1:
-        m_Texture: {fileID: 2800000, guid: fccc6818be225674382d96933708d421, type: 3}
-        m_Scale: {x: 4, y: 6}
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _Normal2:
-        m_Texture: {fileID: 2800000, guid: 1d557bc533f5684438d25d03042b1025, type: 3}
-        m_Scale: {x: 5, y: 5}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: f7b009bc793255f49bb71f7de4da61f8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RoughnessMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Cull: 0
-    - _Glossiness: 0.555
     - _Metallic: 0
-    - _NormalStrength1: 0.21
-    - _NormalStrength2: 0.8
+    - _RoughnessMultiplier: 1
     m_Colors:
-    - _Color: {r: 0.03137255, g: 0.15294114, b: 0.14117643, a: 0.8862745}
-    - _FlowDirection1: {r: 0.05, g: 0.005, b: 0, a: 1}
-    - _FlowDirection2: {r: 0.005, g: 0.005, b: 0, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
