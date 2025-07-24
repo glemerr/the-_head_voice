@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de7caa53cc01fed4f953d0e6c045a835, type: 3}
   m_Name: TurorialPoderes
   m_EditorClassIdentifier: 
-  zoneName: Turorial Recargar
+  zoneName: Dispara a los objetos del frente
   gizmoColor: {r: 0, g: 1, b: 1, a: 1}
   size: {x: 0, y: 0}
   offset: {x: 0, y: 0}

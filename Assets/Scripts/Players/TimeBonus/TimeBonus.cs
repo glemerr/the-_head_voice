@@ -78,7 +78,13 @@ public class TimeBonus : MonoBehaviour
 
     void OnParticleTrigger()
     {
-        if (ZoneManager.Instance == null) return;
+        Debug.Log("TimeBonus: OnParticleTrigger called");
+        if (ZoneManager.Instance == null)
+        {
+            Debug.LogError("TimeBonus: ZoneManager instance not found!", this);
+            return;
+        }    
+    
 
         enterList.Clear();
         int numEntered = ps.GetTriggerParticles(

@@ -18,7 +18,7 @@ public class PerimeterSpawner : MonoBehaviour
 
         var bc = zoneTrigger.GetComponent<BoxCollider>();
         Vector3 c = bc.center;
-        Vector3 s = bc.size;
+        Vector3 s = bc.size+ new Vector3(10f, 0f, 10f);
         //StartCoroutine(delay(3.0f));
         SpawnFace("Front", c + new Vector3(0, 0, s.z * 0.5f),
                 new Vector3(s.x, height, thickness), blockPrefab);

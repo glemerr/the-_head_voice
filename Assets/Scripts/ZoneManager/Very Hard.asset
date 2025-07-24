@@ -25,7 +25,7 @@ MonoBehaviour:
     enemyCount: 3
     spawnParticleEffect: {fileID: 6441873369525384307, guid: 387574b6afa3d0d48bca3027d95e3cae, type: 3}
     particleDuration: 1
-  - enemyPrefab: {fileID: 248364554812170147, guid: 8ab4387969cc918499461f0d3a211970, type: 3}
+  - enemyPrefab: {fileID: 248364554812170147, guid: 8cba69f2e2538754184bcf0a8cee312c, type: 3}
     enemyCount: 2
     spawnParticleEffect: {fileID: 3958596659431381315, guid: a181d83ed1bbbca42841d712a384fe91, type: 3}
     particleDuration: 1

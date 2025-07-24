@@ -10,26 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: de7caa53cc01fed4f953d0e6c045a835, type: 3}
-  m_Name: Easy
+  m_Name: TuroriaIlConsejos
   m_EditorClassIdentifier: 
-  zoneName: "\U0001F7E2 Easy (For Newcomers)"
+  zoneName: Consejos de la Abuela
   gizmoColor: {r: 0, g: 1, b: 1, a: 1}
-  size: {x: 100, y: 50}
+  size: {x: 0, y: 0}
   offset: {x: 0, y: 0}
-  totalEnemies: 15
-  maxConcurrentEnemies: 3
-  healthMultiplier: 0.5
-  damageMultiplier: 0.5
+  totalEnemies: 1
+  maxConcurrentEnemies: 1
+  healthMultiplier: 1
+  damageMultiplier: 0.05
   enemyTypes:
   - enemyPrefab: {fileID: 35783984430232860, guid: de2b687966c4ab24bb5608dd250fcdf0, type: 3}
-    enemyCount: 2
+    enemyCount: 0
     spawnParticleEffect: {fileID: 3958596659431381315, guid: a181d83ed1bbbca42841d712a384fe91, type: 3}
-    particleDuration: 1
-  enemySpawnRate: 3
-  maxTime: 210
+    particleDuration: 0
+  enemySpawnRate: 1
+  maxTime: 60
   difficultyLevel: 1
-  startMessages: Zone Started.
-  progessMessages: 'Enemie restants: {0}'
-  endMessages: Zone Ended.
-  failMessages: Zone Failed.
-  completeMessage: Zone Completed
+  startMessages: Interactua con con tu querida Abuela
+  progessMessages: "Estos objetos  contienen ense\xF1ansas de la buela"
+  endMessages: Excelente
+  failMessages: Intentalo de nuevo
+  completeMessage: Excelente, Continua aprendiendo.

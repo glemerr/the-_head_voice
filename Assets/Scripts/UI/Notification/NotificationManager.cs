@@ -50,7 +50,7 @@ public class NotificationManager : MonoBehaviour
     {
         NotificationData data = new NotificationData(icon, title, description, type);
         notificationQueue.Enqueue(data);
-        Debug.Log($"Notification queued: {title}" + isShowing);
+        //Debug.Log($"Notification queued: {title}" + isShowing);
         if (!isShowing)
         {
             StartCoroutine(ShowNextNotification());
