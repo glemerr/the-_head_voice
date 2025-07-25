@@ -8,7 +8,10 @@ public class PauseMenuManager : MonoBehaviour
 
     private bool isPaused = false;
     public SettingsPanelController settingsController;
-
+    private FirstPersonLook lookScript;
+    private FirstPersonMovement moveScript;
+    private GunManager gunManager;
+    public GameObject player; // Reference to the player GameObject, if needed
     private void Start()
     {
         if (pausePanel == null)
@@ -18,6 +21,9 @@ public class PauseMenuManager : MonoBehaviour
         }
 
         pausePanel.SetActive(false);
+        gunManager = player.GetComponentInChildren<GunManager>();
+        lookScript = player.GetComponentInChildren<FirstPersonLook>();
+        moveScript = player.GetComponentInChildren<FirstPersonMovement>();
         SetCursorState(false);
     }
 
@@ -36,6 +42,9 @@ public class PauseMenuManager : MonoBehaviour
         Time.timeScale = isPaused ? 0f : 1f;
         pausePanel.SetActive(isPaused);
         SetCursorState(isPaused);
+        gunManager.isPaused = isPaused; // Pause gun manager if needed
+        lookScript.canLook = !isPaused;
+        moveScript.canMove = !isPaused;
     }
 
     void SetCursorState(bool showCursor)

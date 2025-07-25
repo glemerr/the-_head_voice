@@ -54134,7 +54134,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1027515796}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.99999994
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -55765,6 +55765,7 @@ GameObject:
   - component: {fileID: 982813619}
   - component: {fileID: 982813618}
   - component: {fileID: 982813617}
+  - component: {fileID: 982813626}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -56036,6 +56037,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pausePanel: {fileID: 354279485}
   settingsController: {fileID: 21692941}
+  player: {fileID: 851165618}
+--- !u!114 &982813626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982813615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 471c28f593c6a7c45a035a4c74f03ae3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useRatio: 1
+  sizeRatio: 0.005
+  fixedSize: 8
+  color: {r: 1, g: 0.9764151, b: 0.9764151, a: 1}
+  dotTexture: {fileID: 2800000, guid: bbbed041bedeeda4886a33870a8307de, type: 3}
 --- !u!1001 &984176775
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -72023,10 +72042,10 @@ MonoBehaviour:
   explosionSound: {fileID: 8300000, guid: d47e6ed162da1f740ad807d00f4679f3, type: 3}
   cricketsSound: {fileID: 8300000, guid: 27130f05a20832e4c82b0e38585226ef, type: 3}
   waterSound: {fileID: 8300000, guid: d9ff41b2d9c8e414c820397c22fc2d6b, type: 3}
-  pickupSound: {fileID: 8300000, guid: adcac75087a17704ca6c0c3b15bc3aa5, type: 3}
+  pickupSound: {fileID: 8300000, guid: bbac56546d1075d489aa7f414c673f3e, type: 3}
   pickupFailSound: {fileID: 0}
   pickupSuccessSound: {fileID: 0}
-  enemyDeathSound: {fileID: 8300000, guid: ac6034ade498bb94b87620cdf6eac48b, type: 3}
+  enemyDeathSound: {fileID: 8300000, guid: 10031ee518fcc7840a1df60a5e3f5268, type: 3}
   enemyDefeatedSound: {fileID: 8300000, guid: 281e15cc92254794eaf05caf4d044b76, type: 3}
   playerDeathSound: {fileID: 0}
   playerDefeatedSound: {fileID: 0}
@@ -77332,7 +77351,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1485745756}
   m_HandleRect: {fileID: 1485745755}
   m_Direction: 2
-  m_Value: 1.0000004
+  m_Value: 1.0000005
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:

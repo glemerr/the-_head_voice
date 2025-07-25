@@ -16,7 +16,7 @@ MonoBehaviour:
   activationKey: 49
   weaponIcon: {fileID: 21300000, guid: b00a089f316226c4fbf74afbd9ca6aba, type: 3}
   baseDamage: 30
-  baseFireRate: 30
+  baseFireRate: 5
   baseProjectileSpeed: 0
   baseClipSize: 50
   baseReloadTime: 0

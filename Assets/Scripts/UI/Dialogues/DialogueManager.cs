@@ -22,7 +22,7 @@ public class DialogueManager : MonoBehaviour
     private FirstPersonMovement moveScript;
 
     [Header("References to player")]
-    private FirstPersonController playerController; // Reference to the player controller to pause movement
+        // Reference to the player controller to pause movement
     private GunManager gunManager; // Reference to the gun manager, if needed
     public GameObject player; // Reference to the player GameObject, if needed
     private void Start()

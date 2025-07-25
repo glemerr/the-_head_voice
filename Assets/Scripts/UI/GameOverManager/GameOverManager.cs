@@ -19,7 +19,8 @@ public class GameOverManager : MonoBehaviour
     private FirstPersonController playerController; // Reference to the player controller to pause movement
     private GunManager gunManager; // Reference to the gun manager, if needed
     public GameObject player; // Reference to the player GameObject, if needed
-    
+    private FirstPersonLook lookScript;
+    private FirstPersonMovement moveScript;
 
     [Header("Scene Fader")]
     public SceneFader sceneFader;
@@ -36,10 +37,12 @@ public class GameOverManager : MonoBehaviour
         SetCursorState(isPaused);
         if (isPaused)
         {
-            playerController.cameraCanMove=false; // Disable player movement
+                   lookScript.canLook = false;
+                    moveScript.canMove = false; // Disable player movement
         }
         else         {
-            playerController.cameraCanMove=true; // Enable player movement
+            lookScript.canLook = true; // Enable player looking
+            moveScript.canMove = true;// Enable player movement
         }
 
         if (timer >= delay)
@@ -57,6 +60,10 @@ public class GameOverManager : MonoBehaviour
     {
         playerController = player.GetComponent<FirstPersonController>();
         gunManager = player.GetComponentInChildren<GunManager>();
+
+        gunManager = player.GetComponentInChildren<GunManager>();
+        lookScript = player.GetComponentInChildren<FirstPersonLook>();
+        moveScript = player.GetComponentInChildren<FirstPersonMovement>();
         if (gunManager == null)
         {
             //Debug.LogError("GunManager not found in player GameObject. Please assign it in the inspector.");
