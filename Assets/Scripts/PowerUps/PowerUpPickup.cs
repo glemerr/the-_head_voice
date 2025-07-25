@@ -11,12 +11,13 @@ public class PowerUpPickup : MonoBehaviour
         {
             if (powerUp != null)
             {
-                            NotificationManager.Instance.ShowItemNotification(
-                powerUp.name, 
-                powerUp.description, 
-                powerUp.icon
-            );
+                NotificationManager.Instance.ShowItemNotification(
+    powerUp.name,
+    powerUp.description,
+    powerUp.icon
+);
                 powerUp.Activate(other.gameObject);
+                AudioManager.Instance.PlayPickupSound();
             }
 
             Destroy(gameObject); // elimina el objeto del mundo

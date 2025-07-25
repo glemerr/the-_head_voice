@@ -100,6 +100,7 @@ public class GunManager : MonoBehaviour
         if (isReloading)
         {
             reloadTimer -= Time.deltaTime;
+
             if (reloadTimer <= 0f)
             {
                 FinishReload();
@@ -114,13 +115,18 @@ public class GunManager : MonoBehaviour
     void HandleInput()
     {
         // Fire
-        if ( Input.GetMouseButton(0) && cooldownTimer <= 0f && ammoInClip > 0 && !isPaused)
+        if (Input.GetMouseButton(0) && cooldownTimer <= 0f && ammoInClip > 0 && !isPaused)
         {
             ApplyBuffsToActiveGun();
 
             activeGun.Fire(firePoint, playerCamera, lineRenderer);
             cooldownTimer = activeGun.fireRate;
             ammoInClip--;
+        }
+        else if (Input.GetMouseButtonUp(0) && cooldownTimer <= 0f && ammoInClip == 0 && !isPaused)
+        {
+            ApplyBuffsToActiveGun();
+            AudioManager.Instance.PlayEmptyClipSound();
         }
 
         // Reload
@@ -191,6 +197,8 @@ public class GunManager : MonoBehaviour
     {
         isReloading = true;
         reloadTimer = activeGun.reloadTime;
+        AudioManager.Instance.PlayRandomPlayerSFX();  
+
         // Optionally trigger reload animation or sound here
     }
 

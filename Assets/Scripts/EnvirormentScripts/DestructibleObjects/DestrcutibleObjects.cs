@@ -85,7 +85,7 @@ public class DestructibleObject : MonoBehaviour
         
         // Play destruction VFX
         PlayDestructionVFX();
-        
+        AudioManager.Instance.PlayExplosionSound();
         // Finally destroy the object
         Destroy(gameObject);
     }

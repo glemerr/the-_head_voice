@@ -6460,7 +6460,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1166849158}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.99999994
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -16247,19 +16247,22 @@ MonoBehaviour:
   jumpSound: {fileID: 0}
   coinSound: {fileID: 0}
   shotSound: {fileID: 8300000, guid: bb2e2714f962491428dcb0b38598b251, type: 3}
-  explosionSound: {fileID: 8300000, guid: d47e6ed162da1f740ad807d00f4679f3, type: 3}
+  explosionSound: {fileID: 8300000, guid: 9930d5b4be15bb04c9d0a6fa0d7e6b2e, type: 3}
   cricketsSound: {fileID: 8300000, guid: 27130f05a20832e4c82b0e38585226ef, type: 3}
   waterSound: {fileID: 8300000, guid: d9ff41b2d9c8e414c820397c22fc2d6b, type: 3}
   pickupSound: {fileID: 8300000, guid: bbac56546d1075d489aa7f414c673f3e, type: 3}
   pickupFailSound: {fileID: 0}
   pickupSuccessSound: {fileID: 0}
   enemyDeathSound: {fileID: 8300000, guid: 10031ee518fcc7840a1df60a5e3f5268, type: 3}
-  enemyDefeatedSound: {fileID: 8300000, guid: 7d156b8a5b340cd46bcf0a76557dd2dd, type: 3}
+  enemyDefeatedSound: {fileID: 8300000, guid: 5987942a818cba04c87cc117e6c3f835, type: 3}
   playerDeathSound: {fileID: 0}
   playerDefeatedSound: {fileID: 0}
   otherSoundEffects: []
   environmentSounds:
   - {fileID: 8300000, guid: d92b71aaf6b8c3e4c8b09d3adac19080, type: 3}
+  - {fileID: 8300000, guid: 5987942a818cba04c87cc117e6c3f835, type: 3}
+  - {fileID: 8300000, guid: 10031ee518fcc7840a1df60a5e3f5268, type: 3}
+  - {fileID: 8300000, guid: b39fcc5eb4dc79144afe8706ea8d2d1c, type: 3}
   enemySounds:
   - {fileID: 8300000, guid: 8ebcb6234d419344daa712ba65bb3798, type: 3}
   - {fileID: 8300000, guid: ac6034ade498bb94b87620cdf6eac48b, type: 3}
@@ -31537,6 +31540,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pausePanel: {fileID: 1186671696}
   settingsController: {fileID: 1567503546}
+  player: {fileID: 1773622015556834}
 --- !u!1 &1928343698
 GameObject:
   m_ObjectHideFlags: 0

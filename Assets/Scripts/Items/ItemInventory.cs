@@ -79,6 +79,8 @@ public class ItemInventory : MonoBehaviour
         if (itemCounts.TryGetValue(item, out int currentCount) && currentCount < maxPerItems)
         {
             equippedItems.Add(item);
+            AudioManager.Instance.PlayPickupSound();  
+            
             BuildItemCounts();  // Actualiza los conteos después de añadir
             return true;
         }

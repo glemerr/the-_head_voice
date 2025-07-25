@@ -9,7 +9,7 @@ public class AudioManager : MonoBehaviour
     private AudioSource musicSource;
 
     [Header("Sound Effects")]
-    public AudioClip jumpSound;
+    public AudioClip EmptyClip;
     public AudioClip coinSound;
     public AudioClip shotSound;          
     public AudioClip explosionSound;     
@@ -98,7 +98,7 @@ public class AudioManager : MonoBehaviour
     public void StopWater()    => waterSource.Stop();
 
     // ===== SPECIFIC SFX METHODS =====
-    public void PlayJumpSound()         => PlaySFX(jumpSound);
+    public void PlayEmptyClipSound()         => PlaySFX(EmptyClip);
     public void PlayCoinSound()         => PlaySFX(coinSound);
     public void PlayShotSound()         => PlaySFX(shotSound);
     public void PlayExplosionSound()    => PlaySFX(explosionSound);
