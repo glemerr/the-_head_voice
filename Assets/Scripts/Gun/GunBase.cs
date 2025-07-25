@@ -13,8 +13,9 @@ public abstract class GunBase : ScriptableObject
     public float baseProjectileSpeed = 20f;
     public int baseClipSize = 10;
     public float baseReloadTime = 0.5f;
-
-    [Header("Runtime Stats (overwritten on equip)")]
+    [Header("Audio")]
+    // public AudioClip shotSound;
+    // [Header("Runtime Stats (overwritten on equip)")]
     [HideInInspector] public float damage;
     [HideInInspector] public float fireRate;
     [HideInInspector] public float projectileSpeed;
@@ -29,6 +30,8 @@ public abstract class GunBase : ScriptableObject
     public GameObject projectilePrefab;
 
     public GameObject gunModelPrefab;
+
+  
 
     /// <summary>
     /// Copy base stats into runtime stats.

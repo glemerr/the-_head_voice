@@ -4924,12 +4924,12 @@ MonoBehaviour:
   lifetime: 5
   direction: {x: 0, y: 0, z: 0}
   enemyImpactEffect:
-    hitParticlePrefab: {fileID: 0}
-    hitSound: {fileID: 0}
+    hitParticlePrefab: {fileID: 8443315704496310910, guid: 6ef35fa36e3a65043b2d800600204bdd, type: 3}
+    hitSound: {fileID: 8300000, guid: 9ed3181ea47270c4ebe5f5caaeccdb3d, type: 3}
     hitSoundVolume: 0.7
   defaultImpactEffect:
-    hitParticlePrefab: {fileID: 0}
-    hitSound: {fileID: 0}
+    hitParticlePrefab: {fileID: 5024009746357069194, guid: ec3f674830402cc45bce805cf6493db7, type: 3}
+    hitSound: {fileID: 8300000, guid: ce50dfe85fcfd6342a8d626f04f66866, type: 3}
     hitSoundVolume: 0.7
   destroyTimer: 5
   owner: {fileID: 295048798979671064, guid: 514bcc5974c005d428db5d075b3f75e0, type: 3}

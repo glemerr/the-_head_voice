@@ -14,6 +14,7 @@ public class LoadingScreenManager : MonoBehaviour
     public TextMeshProUGUI carouselText;
     public TextMeshProUGUI statsText;
     public TextMeshProUGUI warningText;
+    public string[] possibleScenes = new string[] { "Pantano", "PantanoLevel" };
 
     [Header("Carousel Settings")]
     [TextArea(3, 10)]
@@ -58,12 +59,12 @@ public class LoadingScreenManager : MonoBehaviour
         loadingPercentageText.text = "100%";
         subtitleText.text = "Loading existential dread...";
         warningText.text  = "<color=red>WARNING: PSYCHOLOGICAL DAMAGE IMMINENT</color>";
-
+        string selectedScene = possibleScenes[Random.Range(0, possibleScenes.Length)];
         // Transición a la siguiente escena
         if (sceneFader != null)
-            sceneFader.FadeToScene("PantanoLevel");
+            sceneFader.FadeToScene(selectedScene);
         else
-            SceneManager.LoadScene("PantanoLevel");
+            SceneManager.LoadScene(selectedScene);
     }
 
     IEnumerator CarouselTextUpdate()

@@ -66,9 +66,9 @@ public class MainMenuUIManager : MonoBehaviour
         
     }
 
-    public void OnContinue()
+    public void OnTuturial( string sceneName)
     {
-        Debug.Log("Continue game...");
+        SceneManager.LoadScene(sceneName);
         // Load saved data here
     }
 
@@ -78,8 +78,8 @@ public class MainMenuUIManager : MonoBehaviour
         Application.Quit();
     }
     public void OnSettings()
-{
-    Debug.Log("Open Settings...");
-    settingsController.OpenSettings();
-}
+    {
+        Debug.Log("Open Settings...");
+        settingsController.OpenSettings();
+    }
 }

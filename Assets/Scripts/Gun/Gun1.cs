@@ -3,10 +3,14 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Gun1", menuName = "FPS/Guns/Gun1", order = 1)]
 public class Gun1 : GunBase
 {
+    [Header("Audio")]
+    public AudioClip shotSound;
     public override void Fire(Transform firePoint, Camera playerCamera, LineRenderer lineRenderer)
     {
         // Instantiate the projectile
         GameObject proj = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+    if (shotSound != null)
+        AudioSource.PlayClipAtPoint(shotSound, firePoint.position);
 
         // Grab (or add) a Rigidbody on the projectile
         Rigidbody rb = proj.GetComponent<Rigidbody>();

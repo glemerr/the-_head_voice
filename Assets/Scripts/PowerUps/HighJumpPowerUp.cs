@@ -8,20 +8,21 @@ public class HighJumpPowerUp : PowerUp
 
     public override void Activate(GameObject player)
     {
-        FirstPersonController controller = player.GetComponent<FirstPersonController>();
+        //FirstPersonController controller = player.GetComponent<FirstPersonController>();
+        Jump controller = player.GetComponent<Jump>();
         if (controller != null)
         {
             controller.StartCoroutine(ApplyHighJump(controller));
         }
     }
 
-    private IEnumerator ApplyHighJump(FirstPersonController controller)
+    private IEnumerator ApplyHighJump(Jump controller)
     {
-        float originalJump = controller.jumpPower;
-        controller.jumpPower *= jumpMultiplier;
+        float originalJump = controller.jumpStrength;
+        controller.jumpStrength *= jumpMultiplier;
 
         yield return new WaitForSeconds(duration);
 
-        controller.jumpPower = originalJump;
+        controller.jumpStrength = originalJump;
     }
 }

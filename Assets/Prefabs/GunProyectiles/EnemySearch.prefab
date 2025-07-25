@@ -9760,11 +9760,11 @@ MonoBehaviour:
   searchDelay: 0.4
   enemyImpactEffect:
     hitParticlePrefab: {fileID: 5024009746357069194, guid: ec3f674830402cc45bce805cf6493db7, type: 3}
-    hitSound: {fileID: 0}
+    hitSound: {fileID: 8300000, guid: 9ed3181ea47270c4ebe5f5caaeccdb3d, type: 3}
     hitSoundVolume: 0.7
   defaultImpactEffect:
     hitParticlePrefab: {fileID: 7226583673155636401, guid: a2ab56839e1c9504ea9d141e95d0b16b, type: 3}
-    hitSound: {fileID: 0}
+    hitSound: {fileID: 8300000, guid: 9ed3181ea47270c4ebe5f5caaeccdb3d, type: 3}
     hitSoundVolume: 0.7
 --- !u!65 &2904990418042631530
 BoxCollider:

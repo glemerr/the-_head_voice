@@ -9,6 +9,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 318695414624906668, guid: ce7d185d3b5e4954e9e25f6bed8e4736, type: 3}
+      propertyPath: enemyImpactEffect.hitSound
+      value: 
+      objectReference: {fileID: 8300000, guid: ce50dfe85fcfd6342a8d626f04f66866, type: 3}
+    - target: {fileID: 318695414624906668, guid: ce7d185d3b5e4954e9e25f6bed8e4736, type: 3}
+      propertyPath: defaultImpactEffect.hitSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 9ed3181ea47270c4ebe5f5caaeccdb3d, type: 3}
+    - target: {fileID: 318695414624906668, guid: ce7d185d3b5e4954e9e25f6bed8e4736, type: 3}
       propertyPath: enemyImpactEffect.hitParticlePrefab
       value: 
       objectReference: {fileID: 5024009746357069194, guid: ec3f674830402cc45bce805cf6493db7, type: 3}

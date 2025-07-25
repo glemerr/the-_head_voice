@@ -18,7 +18,7 @@ MonoBehaviour:
   offset: {x: 0, y: 0}
   totalEnemies: 1
   maxConcurrentEnemies: 1
-  healthMultiplier: 0.2
+  healthMultiplier: 0.001
   damageMultiplier: 0.05
   enemyTypes:
   - enemyPrefab: {fileID: 35783984430232860, guid: de2b687966c4ab24bb5608dd250fcdf0, type: 3}

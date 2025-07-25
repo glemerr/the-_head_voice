@@ -62,6 +62,8 @@ public class ZoneManager : MonoBehaviour
         }
         activeZone = zone;
         isZoneActive = true;
+
+        AudioManager.Instance.PlayMusic();
         StartCoroutine(delay(activationDelay, zone));
 
         Zone zoneConfig = activeZone.currentZone;
@@ -86,6 +88,7 @@ public class ZoneManager : MonoBehaviour
     public void DeactivateZone(ZoneTrigger zone)
     {
         if (activeZone != zone || !isZoneActive) return;
+        AudioManager.Instance.StopMusic();
         CleanUpCurrentZone();
         uiZoneManager.EndZoneSequence(false, activeZone.currentZone);
     }
@@ -117,7 +120,7 @@ public class ZoneManager : MonoBehaviour
         if (!isZoneActive) return;
 
         EnemiesRemaining--;
-
+        AudioManager.Instance.PlayEnemyDeathSound();
         uiZoneManager.UpdateEnemyCount(
             activeZone.currentZone.totalEnemies - EnemiesRemaining,
             activeZone.currentZone.totalEnemies

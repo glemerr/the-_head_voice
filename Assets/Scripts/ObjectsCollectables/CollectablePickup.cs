@@ -179,6 +179,7 @@ public class CollectablePickup : MonoBehaviour
         {
             // Successfully picked up
             if (pickupEffect) Instantiate(pickupEffect, transform.position, Quaternion.identity);
+            AudioManager.Instance.PlayPickupSound();
             DestroyKeyUI();
             Destroy(gameObject);
         }

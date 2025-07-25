@@ -8,7 +8,7 @@ public class SpeedBoostPowerUp : PowerUp
 
     public override void Activate(GameObject player)
     {
-        FirstPersonController controller = player.GetComponent<FirstPersonController>();
+        FirstPersonMovement controller = player.GetComponent<FirstPersonMovement>();
         if (controller != null)
         {
 
@@ -17,13 +17,13 @@ public class SpeedBoostPowerUp : PowerUp
     }
 
 
-    private IEnumerator ApplySpeedBoost(FirstPersonController controller)
+    private IEnumerator ApplySpeedBoost(FirstPersonMovement controller)
     {
-        float originalSpeed = controller.walkSpeed;
-        controller.walkSpeed *= speedMultiplier;
+        float originalSpeed = controller.speed ;
+        controller.speed  *= speedMultiplier;
 
         yield return new WaitForSeconds(duration);
 
-        controller.walkSpeed = originalSpeed;
+        controller.speed  = originalSpeed;
     }
 }

@@ -85,7 +85,7 @@ public class EnemyManager : MonoBehaviour
                 spawnPoint.position,
                 spawnPoint.rotation
             );
-            
+        AudioManager.Instance.PlayEnemyDefeatedSound(0.5f);
             // Wait for particle effect to play
             yield return new WaitForSeconds(enemyData.particleDuration);
         }

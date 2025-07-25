@@ -117,6 +117,7 @@ public class GunManager : MonoBehaviour
         if ( Input.GetMouseButton(0) && cooldownTimer <= 0f && ammoInClip > 0 && !isPaused)
         {
             ApplyBuffsToActiveGun();
+
             activeGun.Fire(firePoint, playerCamera, lineRenderer);
             cooldownTimer = activeGun.fireRate;
             ammoInClip--;

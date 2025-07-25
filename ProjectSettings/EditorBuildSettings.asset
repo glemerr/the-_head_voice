@@ -14,6 +14,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PantanoLevel.unity
     guid: bd5dd432e9d18e54c9d4063f49117322
+  - enabled: 1
+    path: Assets/Scenes/Pantano.unity
+    guid: c0d1ff565261f5446a24df392066a26f
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: f5d197ec29eecea4a9250035ae66da8f
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 289c1b55c9541489481df5cc06664110, type: 3}
   m_UseUCBPForAssetBundles: 0

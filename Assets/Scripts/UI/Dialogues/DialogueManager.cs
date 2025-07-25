@@ -18,6 +18,8 @@ public class DialogueManager : MonoBehaviour
     private DialogueNode[] nodes;
     private int currentIndex = 0;
     private bool isPaused = false;
+    private FirstPersonLook lookScript;
+    private FirstPersonMovement moveScript;
 
     [Header("References to player")]
     private FirstPersonController playerController; // Reference to the player controller to pause movement
@@ -25,8 +27,10 @@ public class DialogueManager : MonoBehaviour
     public GameObject player; // Reference to the player GameObject, if needed
     private void Start()
     {
-        playerController = player.GetComponent<FirstPersonController>();
+        //playerController = player.GetComponent<FirstPersonController>();
         gunManager = player.GetComponentInChildren<GunManager>();
+        lookScript = player.GetComponentInChildren<FirstPersonLook>();
+        moveScript = player.GetComponentInChildren<FirstPersonMovement>();
 
     }
 
@@ -51,7 +55,10 @@ public class DialogueManager : MonoBehaviour
         DisplayNode(nodes[currentIndex]);
         Time.timeScale = 0f;
         gunManager.isPaused = isPaused; // Pause gun manager if needed
-        playerController.cameraCanMove = !isPaused; // Disable player movement
+                                        //playerController.cameraCanMove = !isPaused; // Disable player movement
+        lookScript.canLook = false;
+        moveScript.canMove = false;
+
 
     }
 
@@ -91,7 +98,10 @@ public class DialogueManager : MonoBehaviour
         Time.timeScale = 1f;
         // TODO: trigger mission activation or next game event
         gunManager.isPaused = isPaused; // Pause gun manager if needed
-        playerController.cameraCanMove = !isPaused;
+                                        //playerController.cameraCanMove = !isPaused;
+        lookScript.canLook = true;
+        moveScript.canMove = true;
+
     }
     
     void SetCursorState(bool showCursor)

@@ -30,3 +30,4 @@ MonoBehaviour:
   trajectoryResolution: 10
   projectilePrefab: {fileID: 1912806689999129575, guid: 253a6103128d21641bb5a130ce734630, type: 3}
   gunModelPrefab: {fileID: 3859067621160031132, guid: 1aa5c227c8313b84cafa810d5cd540ae, type: 3}
+  shotSound: {fileID: 8300000, guid: bb2e2714f962491428dcb0b38598b251, type: 3}
