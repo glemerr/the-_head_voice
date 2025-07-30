@@ -144,7 +144,7 @@ MonoBehaviour:
   floatFrequency: 1
   floatOffset: {x: 0, y: 0, z: 0}
   itemLight: {fileID: 449256783411111295}
-  baseIntensity: 1
+  baseIntensity: 3
   intensityVariation: 0.5
   intensityFrequency: 2
 --- !u!199 &8591917583308801006
